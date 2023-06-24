@@ -55,7 +55,8 @@ export class IUser {
 
             await Users.update({ token: jwtToken, isActive: true }, { where: { userId: user.userId, id: user.id } });
 
-            return { status: statusCode.OK, message: l10n.t('COMMON_SUCCESS', { key: `${MODULE_NAME.USER} details`, method: REQUEST_METHOD.PUT }) };
+            user.token = jwtToken;
+            return { status: statusCode.OK, message: l10n.t('COMMON_SUCCESS', { key: `${MODULE_NAME.USER} details`, method: REQUEST_METHOD.PUT }), data: user };
         } catch (error) {
             console.error(error);
             return { status: statusCode.INTERNAL_SERVER_ERROR, message: 'SOMETHING_WENT_WRONG' };
