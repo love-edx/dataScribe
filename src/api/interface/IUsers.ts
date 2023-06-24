@@ -91,12 +91,14 @@ export class IUser {
         { where: { userId: user.userId, id: user.id } },
       );
 
+      user.token = jwtToken;
       return {
         status: statusCode.OK,
         message: l10n.t('COMMON_SUCCESS', {
           key: `${MODULE_NAME.USER} details`,
           method: REQUEST_METHOD.PUT,
         }),
+        data: user,
       };
     } catch (error) {
       console.error(error);
