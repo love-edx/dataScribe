@@ -20,6 +20,8 @@ export default (app: Router) => {
     updateWorkspaceSlug,
   );
   route.put('/:slug/upload', handleUploads.single('file'), uploadFile);
+
+  route.post('/:slug/chat', chat);
 };
 
 const createWorkspace = async (req: Request, res: Response) => {
@@ -79,11 +81,27 @@ const updateWorkspaceSlug = async (req: Request, res: Response) => {
     });
 };
 
-const uploadFile = async (req: Request, res: Response) => {
+const uploadFile = async (req: any, res: Response) => {
   const data = req.body;
   data.slug = req.params;
   data.file = req.file;
   IWorkspace.uploadFile(data)
+    .then((response) => {
+      return res.status(response.status).json(response);
+    })
+    .catch((e) => {
+      return res.status(status_code.INTERNAL_SERVER_ERROR).json({
+        status: status_code.INTERNAL_SERVER_ERROR,
+        message: l10n.t('SOMETHING_WENT_WRONG'),
+      });
+    });
+};
+
+const chat = async (req: Request, res: Response) => {
+  const data = req.body;
+  data.slug = req.params;
+
+  IWorkspace.chat(data)
     .then((response) => {
       return res.status(response.status).json(response);
     })
