@@ -1,0 +1,10 @@
+{
+    "id": "7d4231c9-13ba-4ab5-8afc-53492d4bcc09",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg6.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:34",
+    "wordCount": 1315,
+    "pageContent": "Malware on a counterparty\u2019s computer that modifies \nthe copy \u2018n\u2019 paste of a deposit address to send assets \nto the hacker\u2019s wallet\nMalware\n Attacker\nHead of  \nOperations1OTC employee logs into \nhardware wallet.2Attacker deploys malware on host machine and can replace \nhardware wallet deposit address with their own deposit address.\n3Head of Operations unknowingly \nsends funds into the attacker\u2019s \nwallet.Hardware Wallet Counterparty\nMalware that hijacks the wallet interface.\nMalware\n Head of  \nOperations1Head of Operations sends deposit address to \ncounterparty via messenger service.2Malware on counterparty\u2019s computer modifies copy-paste function to \nreplace Head of Operations\u2019 deposit address with attacker\u2019s.\n3Counterparty unknowingly sends \nfunds to attacker\u2019s wallet.Counterparty\nAttacker\nOTHER WAYS HACKERS COMPROMISE DEPOSIT ADDRESSES\n\tSSpoofing the address while copy and pasting between the web browser and the wallet\u2019s app.\n\tSIntercepting and modifying the deposit address while it\u2019s being sent between counterparties on a \nmessaging service (i.e. Telegram).\n\tSHijacking code on the exchange\u2019s website to spoof the address at the origin \u2013 such as the gate.io exchange \nhack that relied on a code breach of the web service StatCounter.\n7\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 289
+}

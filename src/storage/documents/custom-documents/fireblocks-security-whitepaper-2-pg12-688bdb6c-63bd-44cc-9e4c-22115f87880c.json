@@ -1,0 +1,10 @@
+{
+    "id": "688bdb6c-63bd-44cc-9e4c-22115f87880c",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg12.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:03",
+    "wordCount": 1629,
+    "pageContent": "MULTISIG IS OPERATIONALLY INFLEXIBLE\nMultisig cannot offer the operational flexibility organizations require as they grow. \nAs your team expands, you will need to adjust the process of accessing and \ntransferring your digital assets. This can include changing the number of \nemployees required to sign a transaction, adding new key shares as you hire new \nemployees, revoking key shares as employees leave, and modifying the required \nthreshold to sign transactions (e.g. from \u20183 of 4\u2019 to \u20184 of 8\u2019). In these sorts of \nscenarios, multisig addresses create various obstacles, as they are pre-set to the \nwallet.\nHSM (Hardware Security Module)\nA hardware security module (HSM) is a physical device \u2013 separate from a \ncomputer \u2013 that provides extra security for sensitive data. Businesses may use \nan HSM to secure cryptographic keys by ensuring only authorized individuals can \naccess the HSM.\nWhile HSMs do introduce a powerful layer of security, they are vulnerable to \ninternal attackers when they are utilized alone. If an entire private key is stored \non an HSM and multiple parties within an organization have access to it, there\u2019s \nnothing to stop a rogue employee from signing a fraudulent transaction using a \nprivate key stored within it.angle-left \nMulti-sig is not protocol \nagnostic; on the Ethereum \nprotocol, address \ngenerations can get \nextremely expensive when \ncompared to other solutions \n(such as MPC). Ethereum Multi-Sig Address Generation CostAverage Cost per Address (USD)\nSept. 6, 2020 Sept. 13, 2020 Sept. 20, 2020 Sept. 27, 202060\n40\n20\n0\n13\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 369
+}

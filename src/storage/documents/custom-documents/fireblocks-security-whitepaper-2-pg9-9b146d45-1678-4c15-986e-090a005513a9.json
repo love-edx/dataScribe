@@ -1,0 +1,10 @@
+{
+    "id": "9b146d45-1678-4c15-986e-090a005513a9",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg9.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:03",
+    "wordCount": 1510,
+    "pageContent": "What makes a multi-layer \nsolution?\nIn the digital asset industry, the definition of and requirements for a true multi-\nlayer solution has evolved over the years. The following threats \u2013 and the security \nlayers deployed in response to them \u2013 are key to any solution:\nThreat Vector Defense Layer\nPrivate key compromise Threshold signatures  \n(e.g. MPC)Distribution of the private-key into shares using a threshold \nsignature across several servers or devices such that the whole \nprivate key cannot be extracted from a single device if a hacker or \ninsider compromises the device \nRogue admin (or hacker that \nwas able to compromise \nan administrative account) \ntakes control of all machines \nholding private key sharesHardware isolation Protection of each individual key share using hardware isolation, \nsuch that even if an attacker controls the machine they cannot \nextract any individual private key share\nPhysical attack which steals \nor destroys all the devicesPhysical distribution Distribution of devices across several physical data centers \nMan-in-the-middle or human \nerror on deposit addressesVerification of deposit \naddressAttestation of the deposit address of counterparties using secure \nchannels that are immune to both network and host-based man-\nin-the-middle attacks\nInternal employee collusion Workflow and policy Separation of duties across multiple organizational functions and \nenforcement of policies/approval workflows\n10 Fireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 276
+}

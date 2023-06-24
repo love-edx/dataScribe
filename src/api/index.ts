@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import users from "./routes/users";
-
+import system from './routes/system';
+import workspace from './routes/workspace';
+import users from './routes/users';
 // guaranteed to get dependencies
 export default () => {
-    const app = Router();
-    users(app);
-    return app;
+  const app = Router();
+  workspace(app);
+  system(app);
+  users(app);
+  return app;
 };

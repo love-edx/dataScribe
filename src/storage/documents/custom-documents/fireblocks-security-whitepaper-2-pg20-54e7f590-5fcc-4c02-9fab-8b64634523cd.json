@@ -1,0 +1,10 @@
+{
+    "id": "54e7f590-5fcc-4c02-9fab-8b64634523cd",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg20.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:03",
+    "wordCount": 965,
+    "pageContent": "As the keys are stored in SGX, they cannot be extracted even if malware or a \nhacker has control over the server\u2019s OS \u2013 as the memory space and the data in the \nSGX enclave are encrypted. \nWe also utilize SGX to secure API keys. In the trusted execution environments \n(TEEs) in which we store these exchange credentials, the information cannot be \nretrieved by hackers, inside colluders, or even Fireblocks employees.\n1Admin has access to all \nMPC servers to install \ncritical software updates. \n2Admin can steal a \nsufficient number of MPC \nshares.Admin\n MPC Share 1\nMPC Protocol\nMPC Share 1\nMPC Protocol\nMPC Share 1\nMPC Protocol1Admin has access to all \nMPC servers to install \ncritical software updates. \n2Hardware isolation \nprevents  admin from \naccessing MPC shares.Admin\n MPC Share 1\nMPC Protocol\nMPC Share 1\nMPC Protocol\nMPC Share 1\nMPC ProtocolUSER-MODE MPC FIREBLOCKS HARDWARE ISOLATED MPC\n21\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 246
+}

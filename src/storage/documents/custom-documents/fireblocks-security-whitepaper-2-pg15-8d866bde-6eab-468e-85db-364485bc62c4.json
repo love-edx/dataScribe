@@ -1,0 +1,10 @@
+{
+    "id": "8d866bde-6eab-468e-85db-364485bc62c4",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg15.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:34",
+    "wordCount": 1532,
+    "pageContent": "MPC (Multi-Party Computation)\nMPC (multi-party computation) is the next generation of private key security.\nMPC is a cryptographic technology that allows multiple parties to each hold secret \ninformation and then solve a problem that requires the input of all these secrets in \na decentralized way, without ever sharing the secret information with one another.\nFireblocks developed the MPC-CMP protocol  that applies this concept to \nblockchain-based ECDSA and EdDSA signatures (used by all blockchains). MPC-\nCMP removes the concept of a single private key; such a key is never gathered \nas a whole, neither during the first creation of the wallet nor during the actual \nsignature . MPC-CMP follows a set of steps to guarantee that there is never a \nsingle point of compromise of the private key:\n1\n2\n3Individual secrets are randomized by each of the several (always more than 3) \nendpoints \u2013 either servers or mobile devices. Those secrets are never shared \nwith each other.\nThe individual endpoints engage in a decentralized wallet creation protocol in \nwhich they compute the public key (wallet address) that corresponds to the set \nof individual private shares.\nWhen a signature on a blockchain transaction is requested, a quorum (at least \n3) of endpoints engage in a distributed signature process where each one of \nthe endpoints individually validates the transaction and policy and signs the \ntransaction.\nPushing MPC Wallet \nSigning Speeds 8X \nwith MPC-CMP\n16\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 314
+}

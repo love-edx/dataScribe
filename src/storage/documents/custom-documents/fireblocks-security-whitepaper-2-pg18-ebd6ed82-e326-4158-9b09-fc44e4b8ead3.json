@@ -1,0 +1,10 @@
+{
+    "id": "ebd6ed82-e326-4158-9b09-fc44e4b8ead3",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg18.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:34",
+    "wordCount": 443,
+    "pageContent": "The Fireblocks multi-layer \nsecurity solution\nThe Fireblocks R&D team created a multi-layer security matrix that layers MPC, \nIntel SGX, our signature Policy Engine, and a deposit address authentication \nnetwork to build the most impenetrable system on the market. This ensures that \nour customers\u2019 assets are protected from cyberattacks, internal colluders, and \nhuman errors.\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets 19",
+    "token_count_estimate": 92
+}

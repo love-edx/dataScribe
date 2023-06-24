@@ -1,5 +1,9 @@
 {
-  "SOMETHING_WENT_WRONG": "We're sorry, but something went wrong. Please refresh or go back",
+  "SOMETHING_WENT_WRONG": "Something went wrong, please try again",
+  "NOT_FOUND": "{{key}} Not Found",
+  "LOG_IN": "Logged in successfully",
+  "COMMON_SUCCESS_MESSAGE": "{{key}} {{method}} successfully",
+  "FILE_PROCESS": "fail to process fail",
   "ALREADY_EXISTS": "{{key}} already exists",
   "VERFIY_EMAIL_SENT": "Verification mail has been sent to your mail Id, please check",
   "NOT_EXISTS": "{{key}} does not exist",
@@ -17,7 +21,6 @@
   "FROGOT_PASSWORD": "Email sent to your mail ID, please check",
   "INVALID_REQUEST": "Your request is not valid, please recheck",
   "RESET_PASSWORD": "Password has been reset successfully",
-  "NOT_FOUND": "{{key}} Not Found",
   "SOCIAL_EMAIL_UPDATE_ERROR": "You can not update your email as your are registered with the social platform",
   "TOO_MANY_REQUESTS": "Too Many Requests",
   "EMAIL_VERIFIED": "Successfully email has been verified",
