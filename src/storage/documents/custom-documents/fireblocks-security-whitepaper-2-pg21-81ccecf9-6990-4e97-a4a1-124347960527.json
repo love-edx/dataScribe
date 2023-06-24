@@ -1,0 +1,10 @@
+{
+    "id": "81ccecf9-6990-4e97-a4a1-124347960527",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg21.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:34",
+    "wordCount": 1469,
+    "pageContent": "Layer 3: Policy Engine\nThe Fireblocks Policy Engine, which enables organizations to set up specific \napproval policies for every transaction, represents the next step for digital asset \nsecurity. \nThe Policy Engine allows users to configure a list of rules that affect how \ntransactions are handled and approved. A rule can set whether a transaction is \nblocked, approved, or requires additional signers using filters such as source, \ndestination, asset, and amount. \nHere are some examples of possible rules that could be applied to an organization \nusing the Policy Engine:\n\tSWhen one of the traders in the team makes a transfer to external wallets, it \nwill require a second approval by one of the other team members.\n\tSAny transfer to an external wallet above $50k requires an approval by either \nthe Ops team leader or two members of the Ops team.\n\tSBlock all transfers from the vault to any wallet or exchange if the total volume \nhas exceeded $100M in the last 24 hours.\nFireblocks secures the Policy Engine itself using SGX and distributes policy \nverification across several MPC servers. Policy rules are signed by a quorum of \nadmins and encrypted within SGX; the engine is implemented inside of the SGX \nenclave and the code cannot be modified.  This prevents both hackers and even \ninsiders (such as IT administrators) from modifying the implemented rules or the \nlogic of the policy engine.\n22\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 301
+}

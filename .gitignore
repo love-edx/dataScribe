@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+.env*
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+build
+src/db
+
+/db
+.vscode
+
+public/*
+logs

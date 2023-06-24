@@ -1,0 +1,10 @@
+{
+    "id": "1577a194-e60f-42b5-8d80-a6766288efff",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg5.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:34",
+    "wordCount": 1639,
+    "pageContent": "But it\u2019s important to understand that private keys aren\u2019t the end of digital asset \nsecurity. For institutions that only need to secure digital assets in storage and \ndon\u2019t need to instantly access or move their assets, focusing on private keys is \nadequate. However, if the assets are being transferred between trading venues, \nliquidity providers, customer accounts, and other counterparties, it\u2019s necessary to \nalso secure deposit addresses and API credentials. \nThis is one of the reasons why some digital asset security solutions stop at MPC \n\u2013 because it\u2019s a great technology for securing private keys. But if your institution is \nlooking to actually move and transfer digital assets on a consistent basis (which is \nnecessary to build a profitable business model in the space), it\u2019s important to also \nsecure deposit addresses.\nDeposit Addresses\nA deposit address is a long alphanumeric string that designates the public \naddress of a wallet. To transfer funds to a counterparty, it\u2019s necessary for both \nparties to exchange deposit addresses. Hackers target the deposit address \nexchange process at a number of points along the way . Here are a few common \nattacks:\nFraudulent Chrome web extensions that hijack \nthe web browser (man-in-the-browser).\nOTC Employee1Head of Operations logs on to \nexchange to withdraw funds.2Attacker deploys malicious Chrome extension to modify content \non exchanges webpage, inserting their own deposit address.\n3OTC employee unknowingly sends funds to attacker \nwhile attempting to make withdrawal.Chrome \nExtension\nExchange\nAttacker\n6\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 326
+}

@@ -1,0 +1,10 @@
+{
+    "id": "5716e514-51ea-4220-a35f-1502b28fc4ed",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg16.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:03",
+    "wordCount": 1574,
+    "pageContent": "In a similar fashion to multi-sig, the MPC-CMP private key protection layer \nremoves the single point of compromise from both external hackers and insiders \n\u2013 as the private key is never concentrated on a single device at any point in time.\nAt the same time, MPC\u2019s distributed nature allows team members to require \nmultiple authorizers for a transaction and sign transactions without being in the \nsame location. Operationally, it\u2019s a significant advancement over multisig due \nto its inherent flexibility; unlike multisig, MPC allows for ongoing modification \nand maintenance of the signature scheme. To use the example detailed above, \nchanging from a \u20183 of 4\u2019 set-up to any other set-up would simply require existing \nshareholders to agree on the new distributed computation and the addition of a \nnew user share. In this process the blockchain wallet address (deposit address) \nis maintained, so that you don\u2019t need to create a new wallet, move any funds, or \nprovide counterparties with a new address.FIREBLOCKS MPC-CMP WALLET GENERAL MPC WALLET\nDeployment Options PaaS, SaaS SDK, PaaSSingle point of private-key compromise\nSecure MPCNO\nSecure MPCNO\nHardware based isolation\nAll shares are chip-level isolatedYES NO\nSecure Transfer Environment for institutional \ntransfer and E2E authentication of deposit \naddresses with counterpartiesAll shares are chip-level isolatedYES NOCryptographic authentication for signature \naccess Passcode + bio / YubikeyYES NOMPC-CMP: A New Breakthrough in MPC Technology\n17\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 328
+}

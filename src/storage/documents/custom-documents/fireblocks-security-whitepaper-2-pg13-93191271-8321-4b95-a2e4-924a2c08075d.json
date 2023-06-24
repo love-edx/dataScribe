@@ -1,0 +1,10 @@
+{
+    "id": "93191271-8321-4b95-a2e4-924a2c08075d",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg13.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:03",
+    "wordCount": 1467,
+    "pageContent": "As HSMs have a fairly limited logic, the request to sign a transaction is validated \nagainst an external access token that a server or computer store. Any user, or a \nhacker that compromised their computer, can obtain the authorization token and \nforce the HSM to sign a transaction that will withdraw the entire amount from the \nwallet.\nDue to their limited resources, HSMs cannot protect critical policies or workflow \nlogics, forcing wallet providers that use HSMs to implement such logic in user-\nmode. This type of setup exposes the wallet to both external hackers and insiders \nthat can easily modify the whitelisting and velocity withdrawal policies. This \noccured in the famous BitGo-Bitfinex hack , where some blamed BitGo HSMs \nfor \u201cblindly signing\u201d the withdrawal of nearly 120,000 BTC after the policy was \nchanged by the hackers.\nMoreover, the limited resources of HSMs prevent them from running next-\ngeneration cryptography \u2013 such as MPC and zero-knowledge algorithms.\nIn addition, HSMs pose various operational problems. In today\u2019s remote-forward \nwork environments, the necessity to have certain employees physically present \nwherever the HSM itself is located can be a serious issue. And if your organization \nis transferring digital assets with any consistency, you don\u2019t want to be dealing \nwith the added inconvenience of moving data (such as private keys) in and out of \nan HSM. \n14\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 309
+}

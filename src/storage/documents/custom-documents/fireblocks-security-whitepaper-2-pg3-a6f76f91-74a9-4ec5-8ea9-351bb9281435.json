@@ -1,0 +1,10 @@
+{
+    "id": "a6f76f91-74a9-4ec5-8ea9-351bb9281435",
+    "url": "file:///home/rahul/Desktop/Hackathon/datascribe/collector/hotdir/processed/Fireblocks Security Whitepaper (2).pdf",
+    "title": "Fireblocks Security Whitepaper (2)_pg3.pdf",
+    "description": "a custom file uploaded by the user.",
+    "published": "2023-06-24 23:39:03",
+    "wordCount": 1547,
+    "pageContent": "The Attack vectors\nIn order to fully protect your digital assets, it\u2019s first important to understand how \ncybercriminals usually compromise them. If your solution accounts for the 3 \nprimary attack vectors that hackers focus on, you can fully secure your asset \nstorage and transfer process. These attack vectors include:\n\tSPrivate keys\n\tSDeposit addresses\n\tSCredentials and authentication\nPrivate Keys\nHackers and other malicious actors (such as rogue employees) may attempt to \ncompromise a victim\u2019s private keys in order to access their wallet, which controls \nthe funds they have stored on the blockchain. This enables the attacker to transfer \nthe funds from the victim\u2019s wallet to anywhere \u2013 i.e. into their own wallet. One \nexample of this is the Cryptopia hack of January 2019 , in which professional \nhackers stole $16 million by compromising Cryptopia\u2019s wallet system. Some of the \nways in which private keys have been compromised before include:\n\tSInfecting a server with malware that steals the private key.\n\tSStealing an HSM (hardware security module) authentication token and forcing \nthe HSM to sign a withdrawal transaction.\n\tSAn authorized internal employee steals the private key.\nToday, institutions in the digital asset space are securing private keys using MPC \n(multi-party computation).  MPC represents a powerful next step in private key \nsecurity because it removes the single point of compromise, and it\u2019s even more \neffective if it\u2019s secured in hardware. \n4\nFireblocks\u2019 Multi-layer Philosophy for Securing Digital Assets",
+    "token_count_estimate": 315
+}

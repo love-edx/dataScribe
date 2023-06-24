@@ -1,0 +1,7 @@
+{
+  "SOMETHING_WENT_WRONG": "Something went wrong, please try again",
+  "NOT_FOUND": "{{key}} Not Found",
+  "LOG_IN": "Logged in successfully",
+  "COMMON_SUCCESS_MESSAGE": "{{key}} {{method}} successfully",
+  "FILE_PROCESS": "fail to process fail"
+}
