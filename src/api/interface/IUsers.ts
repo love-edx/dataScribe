@@ -3,7 +3,7 @@ import * as l10n from 'jm-ez-l10n';
 import { v4 as uuidv4 } from 'uuid';
 import statusCode from '../../common/utils/StatusCodes';
 import { Users } from "../../common/models";
-import { MODULE_NAME, REQUEST_METHOD } from "../../common/utils/Constant";
+import { AUTHORIZATION_MESSAGE, MODULE_NAME, REQUEST_METHOD } from "../../common/utils/Constant";
 import { genHashToken } from "../../common/services/Helper";
 import { generateJWTToken } from "../../common/services/jwtTokens";
 import Container from "typedi";
@@ -77,6 +77,7 @@ export class IUser {
 
             const attributes = ['email', 'userId', 'firstName', 'gender', 'isActive', 'createdAt'];
             const user = await Users.findOne({ where: { userId: tokenData.uid }, attributes });
+            if (user.isActive == false) return { status: statusCode.UNAUTHORISED, message: AUTHORIZATION_MESSAGE.INVALID_REQUEST };
             if (!user) return { status: statusCode.NOTFOUND, message: l10n.t('NOT_EXISTS', { key: MODULE_NAME.USER }) };
 
             return { status: statusCode.OK, message: `${MODULE_NAME.USER} details ${REQUEST_METHOD.GET} successfully`, data: user };
@@ -86,9 +87,24 @@ export class IUser {
         }
     }
 
-    static async forgetPassword(data: any) {
+    static async forgetPassword() {
         try {
             return { status: 200, message: `${MODULE_NAME.EMAIL} sent successfully` };
+        } catch (error) {
+            console.error(error);
+            return { status: statusCode.INTERNAL_SERVER_ERROR, message: 'SOMETHING_WENT_WRONG' };
+        }
+    }
+
+    static async signOut() {
+        try {
+            const tokenData: any = Container.get('auth-token');
+
+            const user = await Users.findOne({ where: { userId: tokenData.uid } });
+            if (!user) return { status: statusCode.NOTFOUND, message: l10n.t('NOT_EXISTS', { key: MODULE_NAME.USER }) };
+
+            await Users.update({ isActive: false }, { where: { userId: tokenData.uid } });
+            return { status: statusCode.OK, message: `${MODULE_NAME.USER} ${REQUEST_METHOD.LOGOUT} successfully` };
         } catch (error) {
             console.error(error);
             return { status: statusCode.INTERNAL_SERVER_ERROR, message: 'SOMETHING_WENT_WRONG' };

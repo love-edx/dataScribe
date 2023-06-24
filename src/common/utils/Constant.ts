@@ -10,7 +10,8 @@ export const REQUEST_METHOD = {
     POST: 'post',
     PUT: 'updated',
     DELETE: 'delete',
-    REGISTERED: 'registered'
+    REGISTERED: 'registered',
+    LOGOUT: 'logout'
 }
 
 export const AUTHORIZATION_MESSAGE = {

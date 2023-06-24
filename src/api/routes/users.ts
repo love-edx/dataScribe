@@ -13,6 +13,8 @@ export default (app: Router) => {
     route.post('/verify', isAuth, verifyPassword);
     route.get('/profile', isAuth, getProfile);
     route.post('/forget-password', isAuth, forgetPassword);
+    route.post('/signout', isAuth, signOut);
+
 };
 
 async function signUp(req: Request, res: Response) {
@@ -40,8 +42,7 @@ async function signIn(req: Request, res: Response) {
 }
 
 async function forgetPassword(req: Request, res: Response) {
-    const data = req.body;
-    IUser.forgetPassword(data)
+    IUser.forgetPassword()
         .then(response => {
             res.status(response.status).json(response);
         })
@@ -53,7 +54,6 @@ async function forgetPassword(req: Request, res: Response) {
 
 async function getProfile(req: Request, res: Response) {
     const data = req.headers;
-    console.log({ data })
     IUser.getProfile(data)
         .then(response => {
             res.status(response.status).json(response);
@@ -67,6 +67,18 @@ async function getProfile(req: Request, res: Response) {
 async function verifyPassword(req: Request, res: Response) {
     const data = req.body;
     IUser.verifyPassword(data)
+        .then(response => {
+            res.status(response.status).json(response);
+        })
+        .catch(e => {
+            console.error(e);
+            return res.status(statusCode.INTERNAL_SERVER_ERROR).json({ status: statusCode.INTERNAL_SERVER_ERROR, message: 'something went wrong' });
+        });
+}
+
+async function signOut(req: Request, res: Response) {
+    const data = req.body;
+    IUser.signOut()
         .then(response => {
             res.status(response.status).json(response);
         })
