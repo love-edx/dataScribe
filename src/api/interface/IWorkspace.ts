@@ -7,6 +7,7 @@ import {
   processDocument,
 } from '../../common/utils/helper';
 import IWorkspaceDocument from './IWorkspaceDocument';
+import { chatWithWorkspace } from '../../common/chat';
 
 export default class IWorkspace {
   static async createWorkspace(data) {
@@ -153,6 +154,39 @@ export default class IWorkspace {
         data: success,
       };
     } catch (error) {
+      return {
+        status: status_code.INTERNAL_SERVER_ERROR,
+        message: l10n.t('SOMETHING_WENT_WRONG'),
+      };
+    }
+  }
+  static async chat(data) {
+    try {
+      const workspace = await Workspace.findOne({ where: data.slug });
+      if (!workspace) {
+        return {
+          status: status_code.NOTFOUND,
+          message: l10n.t('NOT_FOUND', {
+            key: 'workspace',
+          }),
+        };
+      }
+      const result = await chatWithWorkspace(
+        workspace,
+        data.message,
+        data.mode,
+      );
+
+      return {
+        status: status_code.OK,
+        message: l10n.t('COMMON_SUCCESS_MESSAGE', {
+          key: 'workspace',
+          method: 'updated',
+        }),
+        data: { ...result },
+      };
+    } catch (error) {
+      console.log(error);
       return {
         status: status_code.INTERNAL_SERVER_ERROR,
         message: l10n.t('SOMETHING_WENT_WRONG'),

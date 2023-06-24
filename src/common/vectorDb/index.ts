@@ -32,9 +32,3 @@ export const curateSources = (sources = []) => {
 
   return documents;
 };
-
-module.exports = {
-  getVectorDbClass,
-  toChunks,
-  curateSources,
-};

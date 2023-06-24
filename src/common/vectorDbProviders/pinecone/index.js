@@ -19,7 +19,7 @@ const { WorkspaceDocument, DocumentVector } = require('../../model');
 // const { DocumentVectors } = require('../../models/vectors');
 // const { DocumentVectors } = require('../../models/vectors');
 
-const Pinecone = {
+export const Pinecone = {
   name: 'Pinecone',
   connect: async function () {
     if (process.env.VECTOR_DB !== 'pinecone')
@@ -302,5 +302,3 @@ const Pinecone = {
     return { response: response.text, sources: [], message: false };
   },
 };
-
-module.exports.Pinecone = Pinecone;
