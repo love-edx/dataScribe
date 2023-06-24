@@ -19,6 +19,10 @@ export default {
     DB_NAME: process.env.DB_NAME,
     DB_PORT: process.env.DB_PORT,
 
+    JWT_SECRET: process.env.JWT_SECRET,
+    CIPHER_SECRET: process.env.CIPHER_SECRET,
+    JWT_TTL: process.env.JWT_TTL,
+
     /* API configs */
     API_PREFIX: '/',
 };
