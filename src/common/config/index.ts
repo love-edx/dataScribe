@@ -19,4 +19,11 @@ export default {
   DB_HOST: process.env.DB_HOST,
   DB_PORT: process.env.DB_PORT,
   DB_DIALECT: process.env.DB_DIALECT,
+
+  JWT_SECRET: process.env.JWT_SECRET,
+  CIPHER_SECRET: process.env.CIPHER_SECRET,
+  JWT_TTL: process.env.JWT_TTL,
+
+  /* API configs */
+  API_PREFIX: '/',
 };
