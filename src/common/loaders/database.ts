@@ -2,7 +2,7 @@ import * as sequelize from 'sequelize';
 import config from '../config';
 
 export const dbConfig = new sequelize.Sequelize(
-    'datScribe',
+    'datascribe',
     config.DB_USER,
     config.DB_PASSWORD,
     {
