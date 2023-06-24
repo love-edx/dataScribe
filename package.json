@@ -1,0 +1,24 @@
+{
+  "name": "datascribe",
+  "version": "1.0.0",
+  "description": "This project is for hackathon-2023,an AI based solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/love-edx/dataScribe.git"
+  },
+  "keywords": [
+    "langchain",
+    "ai",
+    "express"
+  ],
+  "author": "haresh - mayur - rohan - love",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/love-edx/dataScribe/issues"
+  },
+  "homepage": "https://github.com/love-edx/dataScribe#readme"
+}
