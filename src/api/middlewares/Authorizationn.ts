@@ -6,6 +6,7 @@ import { Container } from 'typedi';
 import config from '../../common/config';
 import statusCode from '../../common/utils/StatusCodes';
 import { AUTHORIZATION_MESSAGE, MODULE_NAME } from "../../common/utils/Constant";
+import { Users } from "../../common/models";
 
 export const isAuth = (req: Request, res: Response, next: NextFunction) => {
     const headerToken = <string>req.headers['authorization'];
@@ -20,9 +21,14 @@ export const isAuth = (req: Request, res: Response, next: NextFunction) => {
             const decryptedData = bytes.toString(crypto.enc.Utf8);
 
             res.locals.jwtPayload = JSON.parse(decryptedData);
-            Container.set('auth-token', res.locals.jwtPayload);
-            Container.set('token-string', token);
-            next();
+            const userData = await Users.findOne({ where: { userId: res.locals.jwtPayload.uid } });
+            if (userData.isActive) {
+                Container.set('auth-token', res.locals.jwtPayload);
+                Container.set('token-string', token);
+                next();
+            } else {
+                return res.status(statusCode.UNAUTHORISED).json({ status: statusCode.UNAUTHORISED, message: AUTHORIZATION_MESSAGE.INVALID_REQUEST });
+            }
         });
     }
 };

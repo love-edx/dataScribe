@@ -1,11 +1,14 @@
-import { WorkspaceDocument } from '../../common/model';
 import { v4 as uuidv4 } from 'uuid';
+import Container from "typedi";
+import { WorkspaceDocument } from '../../common/model';
 import { fileData } from '../../common/utils/helper';
 import { getVectorDbClass } from '../../common/vectorDb';
 
 export default class IWorkspaceDocument {
   static async addDocuments(workspace, additions = []) {
     try {
+      const tokenData: any = Container.get('auth-token');
+
       const VectorDb = getVectorDbClass();
       if (additions.length === 0) return false;
       for (const path of additions) {

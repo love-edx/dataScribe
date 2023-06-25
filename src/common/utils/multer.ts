@@ -4,6 +4,7 @@ export const setupMulter = () => {
   // Handle File uploads for auto-uploading.
   const storage = multer.diskStorage({
     destination: function (req, file, cb) {
+      console.log(path.resolve(__dirname, `../../../collector/hotdir`))
       const uploadOutput = path.resolve(__dirname, `../../../collector/hotdir`);
       cb(null, uploadOutput);
     },

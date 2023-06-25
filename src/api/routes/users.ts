@@ -2,14 +2,15 @@ import { Router, Request, Response } from 'express';
 import statusCode from '../../common/utils/StatusCodes';
 import { IUser } from '../interface/IUsers';
 import { isAuth } from "../middlewares/Authorizationn";
+import { USER_SCHEMA } from "../schema/users.schema";
 
 const route = Router();
 
 export default (app: Router) => {
     app.use('', route);
 
-    route.post('/signup', signUp);
-    route.post('/signin', signIn);
+    route.post('/signup', USER_SCHEMA.AUTH, signUp);
+    route.post('/signin', USER_SCHEMA.AUTH, signIn);
     route.post('/verify', isAuth, verifyPassword);
     route.get('/profile', isAuth, getProfile);
     route.post('/forget-password', isAuth, forgetPassword);
@@ -53,8 +54,7 @@ async function forgetPassword(req: Request, res: Response) {
 }
 
 async function getProfile(req: Request, res: Response) {
-    const data = req.headers;
-    IUser.getProfile(data)
+    IUser.getProfile()
         .then(response => {
             res.status(response.status).json(response);
         })

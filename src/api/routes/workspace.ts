@@ -4,23 +4,27 @@ import IWorkspace from '../interface/IWorkspace';
 import * as l10n from 'jm-ez-l10n';
 import { WORKSPACE_SCHEMA } from '../schema/workspace.schema';
 import { setupMulter } from '../../common/utils/multer';
+import { isAuth } from "../middlewares/Authorizationn";
 const { handleUploads } = setupMulter();
+import multipart from 'connect-multiparty';
+
+const multipartMiddleware = multipart();
 
 const route = Router();
 
 export default (app: Router) => {
   app.use('/workspaces', route);
-  route.post('/', WORKSPACE_SCHEMA.CREATE_WORKSPACE, createWorkspace);
-  route.get('/', WORKSPACE_SCHEMA.LIST_WORKSPACE, getWorkspaces);
-  route.get('/:slug', WORKSPACE_SCHEMA.FIND_WORKSPACE, findWorkspace);
-  route.patch('/:slug', WORKSPACE_SCHEMA.UPDATE_WORKSPACE, updateWorkspaceSlug);
+  route.post('/', WORKSPACE_SCHEMA.CREATE_WORKSPACE, isAuth, createWorkspace);
+  route.get('/', WORKSPACE_SCHEMA.LIST_WORKSPACE, isAuth, getWorkspaces);
+  route.get('/:slug', WORKSPACE_SCHEMA.FIND_WORKSPACE, isAuth, findWorkspace);
+  route.patch('/:slug', WORKSPACE_SCHEMA.UPDATE_WORKSPACE, isAuth, updateWorkspaceSlug);
   route.put(
     '/:slug/embedding',
     WORKSPACE_SCHEMA.UPDATE_WORKSPACE,
+    isAuth,
     updateWorkspaceSlug,
   );
-  route.put('/:slug/upload', handleUploads.single('file'), uploadFile);
-
+  route.put('/:slug/upload', multipartMiddleware, /* isAuth, */ uploadFile);
   route.post('/:slug/chat', chat);
 };
 
@@ -84,7 +88,9 @@ const updateWorkspaceSlug = async (req: Request, res: Response) => {
 const uploadFile = async (req: any, res: Response) => {
   const data = req.body;
   data.slug = req.params;
-  data.file = req.file;
+  console.log(req)
+  data.file = req.files.file;
+  console.log(data)
   IWorkspace.uploadFile(data)
     .then((response) => {
       return res.status(response.status).json(response);

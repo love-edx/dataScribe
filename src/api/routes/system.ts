@@ -4,12 +4,13 @@ import IWorkspace from '../interface/IWorkspace';
 import * as l10n from 'jm-ez-l10n';
 import { WORKSPACE_SCHEMA } from '../schema/workspace.schema';
 import ISystem from '../interface/ISystem';
+import { isAuth } from "../middlewares/Authorizationn";
 
 const route = Router();
 
 export default (app: Router) => {
   app.use('/system', route);
-  route.get('/local-files', getLocalFiles);
+  route.get('/local-files', isAuth, getLocalFiles);
 };
 
 const getLocalFiles = async (req: Request, res: Response) => {

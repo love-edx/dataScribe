@@ -8,10 +8,13 @@ import {
 } from '../../common/utils/helper';
 import IWorkspaceDocument from './IWorkspaceDocument';
 import { chatWithWorkspace } from '../../common/chat';
+import Container from "typedi";
 
 export default class IWorkspace {
   static async createWorkspace(data) {
     try {
+      const tokenData: any = Container.get('auth-token');
+
       await Workspace.create({ ...data, slug: data.name });
       return {
         status: status_code.CREATED,
@@ -30,6 +33,9 @@ export default class IWorkspace {
 
   static async getWorkspaces(data) {
     try {
+      const tokenData: any = Container.get('auth-token');
+      console.log({ tokenData })
+
       const page = +data.page;
       const limit = +data.limit;
       const filter: any = {};
@@ -67,6 +73,8 @@ export default class IWorkspace {
 
   static async findWorkspace(data) {
     try {
+      const tokenData: any = Container.get('auth-token');
+
       const slug = await Workspace.findOne({ where: { slug: data.slug } });
       if (!slug) {
         return {
@@ -94,6 +102,8 @@ export default class IWorkspace {
 
   static async updateWorkspaceSlug(data) {
     try {
+      const tokenData: any = Container.get('auth-token');
+
       const { adds, deletes } = data;
       const slug = await Workspace.findOne({ where: data.slug });
       if (!slug) {
@@ -125,20 +135,22 @@ export default class IWorkspace {
 
   static async uploadFile(data) {
     try {
-      const { originalname } = data.file;
-      console.log(originalname);
+      // const tokenData: any = Container.get('auth-token');
+
+      const { originalFilename } = data.file;
+      console.log(originalFilename);
       const processingOnline = await checkPythonAppAlive();
 
       if (!processingOnline) {
         console.log(
-          `Python processing API is not online. Document ${originalname} will not be processed automatically.`,
+          `Python processing API is not online. Document ${originalFilename} will not be processed automatically.`,
         );
         return {
           status: status_code.INTERNAL_SERVER_ERROR,
           message: l10n.t('FILE_PROCESS'),
         };
       }
-      const { success, reason } = await processDocument(originalname);
+      const { success, reason } = await processDocument(originalFilename);
       if (!success) {
         return {
           status: status_code.INTERNAL_SERVER_ERROR,
@@ -154,6 +166,7 @@ export default class IWorkspace {
         data: success,
       };
     } catch (error) {
+      console.log(error)
       return {
         status: status_code.INTERNAL_SERVER_ERROR,
         message: l10n.t('SOMETHING_WENT_WRONG'),
