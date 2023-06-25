@@ -8,7 +8,7 @@ import {
 } from '../../common/utils/helper';
 import IWorkspaceDocument from './IWorkspaceDocument';
 import { chatWithWorkspace } from '../../common/chat';
-import Container from "typedi";
+import Container from 'typedi';
 
 export default class IWorkspace {
   static async createWorkspace(data) {
@@ -34,7 +34,7 @@ export default class IWorkspace {
   static async getWorkspaces(data) {
     try {
       const tokenData: any = Container.get('auth-token');
-      console.log({ tokenData })
+      console.log({ tokenData });
 
       const page = +data.page;
       const limit = +data.limit;
@@ -136,8 +136,18 @@ export default class IWorkspace {
   static async uploadFile(data) {
     try {
       // const tokenData: any = Container.get('auth-token');
-
+      const path = require('path');
+      const fs = require('fs');
       const { originalFilename } = data.file;
+      const newPath = path.resolve(
+        __dirname,
+        `../../../collector/hotdir/${originalFilename}`,
+      );
+
+      fs.rename(data.file.path, newPath, function (err) {
+        if (err) throw err;
+        console.log('Successfully renamed - AKA moved!');
+      });
       console.log(originalFilename);
       const processingOnline = await checkPythonAppAlive();
 
@@ -166,7 +176,7 @@ export default class IWorkspace {
         data: success,
       };
     } catch (error) {
-      console.log(error)
+      console.log(error);
       return {
         status: status_code.INTERNAL_SERVER_ERROR,
         message: l10n.t('SOMETHING_WENT_WRONG'),

@@ -29,11 +29,7 @@ def move_source(working_dir='hotdir', new_destination_filename='', failed=False,
   return
 
 def write_to_server_documents(data, filename):
-  destination = f"../src/storage/documents/custom-documents"
-  print("here")
-  print(destination)
-  print(os.path.exists(destination))
+  destination = f"../srcerver/storage/documents/custom-documents"
   if os.path.exists(destination) == False: os.makedirs(destination)
   with open(f"{destination}/{filename}.json", 'w', encoding='utf-8') as file:
-    print(file)
     json.dump(data, file, ensure_ascii=True, indent=4)

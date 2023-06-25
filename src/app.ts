@@ -7,7 +7,7 @@ import morgan from 'morgan';
 import * as l10n from 'jm-ez-l10n';
 import status_code from './common/utils/StatusCodes';
 import * as bodyParser from 'body-parser';
-
+import multipart from 'connect-multiparty';
 import { isCelebrateError } from 'celebrate';
 import connectDB from './common/loaders/database';
 
@@ -80,6 +80,10 @@ async function startServer() {
     res.status(err.status || status_code.INTERNAL_SERVER_ERROR);
     res.json({ errors: { message: err.message } });
   });
+  // console.log(path.resolve(__dirname, '../collector/hotdir/'));
+  // app.use(
+  //   multipart({ uploadDir: path.resolve(__dirname, '../collector/hotdir/') }),
+  // );
 
   const server = app.listen(config.PORT, (err?: any) => {
     if (err) {

@@ -1,6 +1,7 @@
 from flask import Flask, json, request
 from scripts.watch.process_single import process_single
 from scripts.watch.filetypes import ACCEPTED_MIMES
+import time
 api = Flask(__name__)
 
 WATCH_DIRECTORY = "hotdir"
@@ -8,8 +9,9 @@ WATCH_DIRECTORY = "hotdir"
 def process_file():
   content = request.json
   target_filename = content.get('filename')
-  print(target_filename)
   print(f"Processing {target_filename}")
+  print(WATCH_DIRECTORY)
+  time.sleep(3)
   success, reason = process_single(WATCH_DIRECTORY, target_filename)
   return json.dumps({'filename': target_filename, 'success': success, 'reason': reason})
 

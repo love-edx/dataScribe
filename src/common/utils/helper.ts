@@ -28,7 +28,7 @@ export const cachedVectorInformation = async (
     return { exists: true, chunks: JSON.parse(rawData) };
   } catch (error) {}
 };
-const PYTHON_API = 'http://0.0.0.0:8888';
+const PYTHON_API = 'http://0.0.0.0:5000';
 
 export const checkPythonAppAlive = async () => {
   return await axios

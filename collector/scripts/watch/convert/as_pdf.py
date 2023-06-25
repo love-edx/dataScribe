@@ -31,9 +31,7 @@ def as_pdf(**kwargs):
       'pageContent': content,
       'token_count_estimate': len(tokenize(content))
     }
-    print("filename")
-    print(filename)
     write_to_server_documents(data, f"{slugify(filename)}-pg{pg_num}-{data.get('id')}")
-  print(parent_dir)
+
   move_source(parent_dir, f"{filename}{ext}", remove=remove)
   print(f"[SUCCESS]: {filename}{ext} converted & ready for embedding.\n")
